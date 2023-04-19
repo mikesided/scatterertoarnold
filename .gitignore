@@ -1,0 +1,5 @@
+.vscode
+.VSCodeCounter
+*.pyc
+resources/*
+!resources/reload_doc.py
