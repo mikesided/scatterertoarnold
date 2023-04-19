@@ -1,5 +1,7 @@
 # ScattererToArnold
 
+Github: https://github.com/mikesided/scatterertoarnold
+
 In order to use clarisse's scatterer system to quickly generate setdresses for an Arnold based project, this tool was developped to simplify the ingest of the setdress back into Maya.
 
 As it stands, the only requirement is that each geometry present in the exported point clouds must have an .ass file exported in advance. The tool will let you select your .ass file for each individual geometry, and build the resulting .ass file using procedurals.
