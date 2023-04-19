@@ -2,4 +2,5 @@
 .VSCodeCounter
 *.pyc
 resources/*
+!resources/img
 !resources/reload_doc.py
