@@ -86,12 +86,9 @@ class ScattererToAssExportWindow(QMainWindow):
 
         # Warning row
         self.warning_icon = qtawesome.icon('fa5s.exclamation-triangle', color='#bda13e')
-        #widget_warning = qtawesome.IconWidget()
-        #widget_warning.setIcon(self.warning_icon)
         self.warning_lbl = QLabel(parent=self, text='')
         self.warning_layout = QGridLayout(self)
-        #self.body_layout.addWidget(widget_warning, 0, 0)
-        self.body_layout.addWidget(self.warning_lbl, 0, 1)
+        self.body_layout.addWidget(self.warning_lbl, 0, 0, 1, 3)
         self.body_layout.addItem(base.Spacer(h_expand=True), 0, 2)
         self.body_layout.addLayout(self.warning_layout, 1, 0, 1, 3)
 
@@ -99,12 +96,9 @@ class ScattererToAssExportWindow(QMainWindow):
 
         # Error row
         self.error_icon = qtawesome.icon('fa5s.exclamation-circle', color='#c43535')
-        #widget_error = qtawesome.IconWidget()
-        #widget_error.setIcon(self.error_icon)
         self.error_lbl = QLabel(parent=self, text='')
         self.error_layout = QGridLayout(self)
-        #self.body_layout.addWidget(widget_error, 3, 0)
-        self.body_layout.addWidget(self.error_lbl, 3, 1)
+        self.body_layout.addWidget(self.error_lbl, 3, 0, 1, 3)
         self.body_layout.addItem(base.Spacer(h_expand=True), 3, 2)
         self.body_layout.addLayout(self.error_layout, 4, 0, 1, 3)
 
@@ -208,8 +202,8 @@ class ScattererToAssExportWindow(QMainWindow):
             warnings (list): List of warning strings
             
         """
-        self.warning_lbl.setText(str(len(warnings)) + ' warning{} found'.format('' if len(warnings) == 1 else 's'))
-        self.error_lbl.setText(str(len(errors)) + ' error{} found'.format('' if len(errors) == 1 else 's'))
+        self.warning_lbl.setText('-> ' + str(len(warnings)) + ' warning{} found'.format('' if len(warnings) == 1 else 's'))
+        self.error_lbl.setText('-> ' + str(len(errors)) + ' error{} found'.format('' if len(errors) == 1 else 's'))
 
         # Write errors to widget
         for error in errors:

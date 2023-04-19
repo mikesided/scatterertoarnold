@@ -83,7 +83,7 @@ def get_box_definition(box) -> dict:
     matrix_norot = geo.get_global_matrix()
     bb_norot = ix.api.GMathBbox3d()
     geo.get_bbox().transform_bbox_and_get_bbox(matrix_norot, bb_norot)
-    #geo.set_rotation(rotation) # Set rotation back to the original geometry
+    geo.set_rotation(rotation) # Set rotation back to the original geometry
 
     x_min, y_min, z_min = bb_norot[0]
     x_max, y_max, z_max = bb_norot[1]
